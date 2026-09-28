@@ -100,13 +100,14 @@ Quando o usuário responder com as escolhas:
 
 ## Etapa 3 — Gerar os áudios
 
-Pergunte o nome da pasta do dia (ex: `leason-11-13`) caso o usuário ainda não tenha
+Pergunte o nome da pasta do dia (ex: `lesson-12-01`) caso o usuário ainda não tenha
 dito. Depois rode, a partir da raiz do projeto:
 
 ```
 python3 generate-audios.py <nome-da-pasta>
 ```
 
-Confirme que rodou sem erro e informe que os áudios e o CSV atualizado (com os
-`[sound:...]`) ficaram em `<nome-da-pasta>/`. Lembre que o próximo passo — importar
-esse CSV pro Anki — continua manual.
+O script sempre cria a pasta dentro de `lessons/`, independente de onde for
+chamado. Confirme que rodou sem erro e informe que os áudios e o CSV atualizado
+(com os `[sound:...]`) ficaram em `lessons/<nome-da-pasta>/`. Lembre que o
+próximo passo — importar esse CSV pro Anki — continua manual.
