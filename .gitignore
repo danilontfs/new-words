@@ -2,9 +2,8 @@
 .env
 
 # Pastas de lições diárias (áudios + planilha gerada por dia)
-leason-*/
-lesson-*/
-random-words-*/
+lessons/*
+!lessons/.gitkeep
 
 # Planilha de trabalho do dia (sobrescrita a cada sessão)
 planilha-anki.csv

@@ -49,10 +49,11 @@ ANKI_MEDIA_WINDOWS = r"/mnt/c/Users/Wapper/AppData/Roaming/Anki2/Usuário 1/coll
 # ====== CLIENTE ELEVENLABS ======
 client = ElevenLabs(api_key=API_KEY)
 
-# Nome da pasta de saída (prefixo dos arquivos)
-output_dir = sys.argv[1] if len(sys.argv) > 1 else "news-audios"
+# Nome da pasta de saída (prefixo dos arquivos), sempre dentro de lessons/
+lessons_dir = os.path.join(base_dir, "lessons")
+prefix = os.path.basename(sys.argv[1]) if len(sys.argv) > 1 else "news-audios"
+output_dir = os.path.join(lessons_dir, prefix)
 os.makedirs(output_dir, exist_ok=True)
-prefix = os.path.basename(output_dir)
 
 # Arquivo CSV original (fixo)
 csv_src = os.path.join(base_dir, "planilha-anki.csv")
