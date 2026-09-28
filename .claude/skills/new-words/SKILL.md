@@ -111,3 +111,18 @@ O script sempre cria a pasta dentro de `lessons/`, independente de onde for
 chamado. Confirme que rodou sem erro e informe que os áudios e o CSV atualizado
 (com os `[sound:...]`) ficaram em `lessons/<nome-da-pasta>/`. Lembre que o
 próximo passo — importar esse CSV pro Anki — continua manual.
+
+## Correções depois dos áudios gerados
+
+Se o usuário pedir pra corrigir alguma frase depois que a etapa 3 já rodou,
+**antes de mexer em qualquer arquivo pergunte se ele já importou o CSV no Anki**.
+Não rode o `generate-audios.py` de novo por conta própria: ele regrava todos os
+áudios e sobrescreve os arquivos na `collection.media` do Anki.
+
+- **Ainda não importou:** corrija o `planilha-anki.csv` e rode o script de novo
+  para a mesma pasta.
+- **Já importou:** não altere o CSV nem os áudios existentes da lição. Crie
+  `lessons/<pasta>/<pasta>-planilha-parte-2.csv` (parte-3 e assim por diante,
+  se já existir) só com as linhas corrigidas, gerando cada áudio com o próximo
+  número livre da sequência (ex: `<pasta>-audio-13.mp3`), com as mesmas
+  configurações de voz do script, e copie os áudios para a pasta do Anki.
