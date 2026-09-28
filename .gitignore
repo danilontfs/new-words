@@ -1,0 +1,17 @@
+# Segredos
+.env
+
+# Pastas de lições diárias (áudios + planilha gerada por dia)
+leason-*/
+lesson-*/
+random-words-*/
+
+# Planilha de trabalho do dia (sobrescrita a cada sessão)
+planilha-anki.csv
+
+# Artefatos de SO / navegador
+*:Zone.Identifier
+
+# Python
+__pycache__/
+*.pyc

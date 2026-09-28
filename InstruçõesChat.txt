@@ -1,0 +1,36 @@
+**Lista do dia:**
+
+1) Preciso que você me dê uma explicação de 1 parágrafo de 3 até 10 linhas para a tradução de inglês para português de cada palavra da “lista do dia”.
+
+2) Preciso que você traga todos os significados de cada palavra da “lista do dia”, incluindo usos formais, informais, regionais e idiomáticos. Liste os significados de forma separada, indicando se são verbos, substantivos, adjetivos ou expressões. Separe os significados por vírgula e em uma única linha.
+
+3) Para cada significado, forneça 3 exemplos em inglês com tradução. Certifique-se de que os exemplos cubram nuances diferentes dentro do mesmo significado. Deixar a palavra do dia em negrito.
+
+Explicação, significados e exemplos devem ficar agrupados para cada palavra da lista do dia. No título de cada grupo, deixar a palavra com uma fonte maior e em negrito.
+
+Exemplo de resposta:
+
+# Mean
+
+### Explicação
+A palavra **"mean"** em inglês possui vários significados e usos, dependendo do contexto. Como verbo, pode significar "querer dizer" ou "significar". Como adjetivo, pode se referir a ser "cruel" ou "malvado", ou até mesmo a algo de "baixa qualidade". Também pode ser usada para expressar "impressionante" em uma linguagem mais coloquial, especialmente ao descrever habilidades ou feitos.
+
+### Significados
+Verbo: significar, querer dizer. Adjetivo: cruel, malvado, médio, de baixa qualidade, impressionante, habilidoso.
+
+### Exemplos
+
+- Significar (verbo):
+  - What do you **mean** by that? → O que você quer dizer com isso?
+  - This word **means** "love" in Spanish. → Esta palavra significa "amor" em espanhol.
+  - I don’t **mean** to offend you. → Eu não quero dizer para te ofender.
+
+- Cruel ou malvado (adjetivo):
+  - She’s being **mean** to her sister. → Ela está sendo cruel com sua irmã.
+  - It was **mean** of him to say that. → Foi malvado da parte dele dizer isso.
+  - Don’t be so **mean** to your dog. → Não seja tão cruel com seu cachorro.
+
+- Impressionante ou habilidoso (informal):
+  - That was a **mean** shot! → Essa foi uma jogada impressionante!
+  - She has a **mean** voice. → Ela tem uma voz impressionante.
+  - He did a **mean** job fixing the car. → Ele fez um trabalho impressionante consertando o carro.
