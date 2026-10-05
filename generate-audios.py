@@ -95,9 +95,12 @@ for i, phrase in enumerate(phrases, start=1):
     out_file = os.path.join(output_dir, mp3_name)
 
     response = client.text_to_speech.convert(
+        # Lista de vozes: https://elevenlabs.io/app/voice-lab
+        # (no plano gratuito, só vozes padrão/premade funcionam via API)
         # voice_id="56AoDkrOh6qfVPDXZ7Pt",      # Cassidy
         # voice_id="FGY2WhTYpPnrIDTdsKH5",      # Laura
-        voice_id="EXAVITQu4vr4xnSDxMaL",      # Sarah
+        # voice_id="EXAVITQu4vr4xnSDxMaL",      # Sarah
+        voice_id="cgSgspJ2msm6clMCkdW9",      # Jessica
         model_id="eleven_multilingual_v2",
         output_format="mp3_44100_128",
         voice_settings={
