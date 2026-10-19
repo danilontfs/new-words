@@ -12,6 +12,7 @@
 import os
 import sys
 import csv
+import re
 import shutil
 from elevenlabs import ElevenLabs
 
@@ -110,7 +111,8 @@ for i, phrase in enumerate(phrases, start=1):
             "use_speaker_boost": True,
             "speed": 0.7
         },
-        text=phrase
+        # Remove tags HTML (ex: <b>...</b> do negrito no card) antes de mandar pro TTS
+        text=re.sub(r"<[^>]+>", "", phrase)
     )
 
     with open(out_file, "wb") as f:

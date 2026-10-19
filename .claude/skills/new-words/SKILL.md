@@ -83,6 +83,10 @@ Quando o usuário responder com as escolhas:
    definição de cada sentido, uma após a outra, separadas por espaço (cada uma já
    termina com ponto), ex: `Verbo: ganhar, obter, adquirir (algo gradualmente). Substantivo: ganho, lucro, aumento.`
    Se a palavra tiver só um sentido, a coluna leva só aquela definição.
+   Na 1ª coluna, envolva a palavra/expressão estudada com `<b>...</b>` (HTML, que é
+   como o Anki renderiza negrito na frente do card), na forma exata em que aparece
+   na frase, ex: `Don't make any noise or you'll <b>frighten</b> the birds away.`
+   O `generate-audios.py` remove as tags antes de gerar o áudio.
 2. Sobrescreva completamente o `planilha-anki.csv` da raiz do projeto com uma linha
    por escolha, na mesma ordem da lista de palavras original. É um arquivo de
    trabalho do dia — pode substituir o conteúdo anterior sem pedir confirmação.
@@ -125,4 +129,5 @@ Não rode o `generate-audios.py` de novo por conta própria: ele regrava todos o
   `lessons/<pasta>/<pasta>-planilha-parte-2.csv` (parte-3 e assim por diante,
   se já existir) só com as linhas corrigidas, gerando cada áudio com o próximo
   número livre da sequência (ex: `<pasta>-audio-13.mp3`), com as mesmas
-  configurações de voz do script, e copie os áudios para a pasta do Anki.
+  configurações de voz do script (removendo as tags `<b>` do texto enviado ao TTS,
+  mas mantendo-as no CSV), e copie os áudios para a pasta do Anki.
