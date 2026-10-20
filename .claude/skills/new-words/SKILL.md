@@ -13,7 +13,8 @@ deixe sempre vazia. A 4ª coluna também fica sempre vazia.
 
 **Nunca use `;` dentro da frase ou da definição** — só como separador de coluna.
 
-O fluxo tem 3 etapas. Não pule etapas nem escreva a planilha antes da etapa 2.
+O fluxo tem 4 etapas. Não pule etapas nem escreva a planilha antes do ok do usuário
+na etapa 2.
 
 ## Etapa 1 — Explicação e opções de frase
 
@@ -73,9 +74,26 @@ de volta já preenchido.
 
 Não escreva na planilha nessa etapa — só apresente as opções e a cola, e aguarde a resposta.
 
-## Etapa 2 — Atualizar a planilha-anki.csv
+## Etapa 2 — Resumo das escolhas e confirmação
 
-Quando o usuário responder com as escolhas:
+Quando o usuário responder com as escolhas (e depois de resolver qualquer pedido
+de frase nova ou palavra extra), **antes de escrever qualquer arquivo** devolva a
+lista completa com cada palavra/expressão e a(s) frase(s) escolhida(s), uma linha
+por linha que vai entrar na planilha, na ordem da lista de palavras. Ex:
+
+```
+- fellow → He's a nice **fellow**.
+- paperback → I bought the **paperback** version. / She prefers **paperbacks** to e-books.
+```
+
+Sem definições nem tags `<b>`. Na mesma mensagem, peça o ok do usuário e o nome da
+pasta do dia (ex: `lesson-12-01`), caso ele ainda não tenha dito. Aguarde a resposta.
+Se ele pedir ajustes, aplique e mostre a lista de novo. Só siga para as etapas 3 e 4
+depois do ok (e com o nome da pasta em mãos).
+
+## Etapa 3 — Escrever a planilha-anki.csv
+
+Depois do ok, faça as etapas 3 e 4 em sequência, sem parar para perguntar nada:
 
 1. Para cada escolha, monte a linha: `{frase escolhida};{todos os sentidos da palavra};;`
    A 2ª coluna sempre leva **todos** os sentidos apresentados na etapa 1 para aquela
@@ -88,8 +106,8 @@ Quando o usuário responder com as escolhas:
    na frase, ex: `Don't make any noise or you'll <b>frighten</b> the birds away.`
    O `generate-audios.py` remove as tags antes de gerar o áudio.
 2. Sobrescreva completamente o `planilha-anki.csv` da raiz do projeto com uma linha
-   por escolha, na mesma ordem da lista de palavras original. É um arquivo de
-   trabalho do dia — pode substituir o conteúdo anterior sem pedir confirmação.
+   por escolha, na mesma ordem do resumo aprovado. É um arquivo de trabalho do dia
+   — pode substituir o conteúdo anterior sem pedir confirmação.
    O arquivo precisa ficar salvo em UTF-8 **com BOM** (`utf-8-sig`) — sem isso o
    Excel abre os acentos corrompidos. Se escrever o arquivo por outra via que não
    garanta o BOM, rode em seguida:
@@ -100,20 +118,10 @@ Quando o usuário responder com as escolhas:
    with open(path, 'w', encoding='utf-8-sig', newline='') as f: f.write(content)
    "
    ```
-3. **Obrigatório, sempre:** depois de gravar a planilha e antes de seguir para a
-   etapa 3 (inclusive antes de perguntar o nome da pasta), devolva ao usuário a
-   lista completa com cada palavra/expressão e a(s) frase(s) escolhida(s), uma
-   linha por linha da planilha, na mesma ordem. Ex:
-   ```
-   - fellow → He's a nice **fellow**.
-   - paperback → I bought the **paperback** version. / She prefers **paperbacks** to e-books.
-   ```
-   Sem colar o CSV inteiro (nada de definições nem tags `<b>`).
 
-## Etapa 3 — Gerar os áudios
+## Etapa 4 — Gerar os áudios
 
-Pergunte o nome da pasta do dia (ex: `lesson-12-01`) caso o usuário ainda não tenha
-dito. Depois rode, a partir da raiz do projeto:
+Logo em seguida, a partir da raiz do projeto, rode:
 
 ```
 python3 generate-audios.py <nome-da-pasta>
@@ -126,7 +134,7 @@ próximo passo — importar esse CSV pro Anki — continua manual.
 
 ## Correções depois dos áudios gerados
 
-Se o usuário pedir pra corrigir alguma frase depois que a etapa 3 já rodou,
+Se o usuário pedir pra corrigir alguma frase depois que a etapa 4 já rodou,
 **antes de mexer em qualquer arquivo pergunte se ele já importou o CSV no Anki**.
 Não rode o `generate-audios.py` de novo por conta própria: ele regrava todos os
 áudios e sobrescreve os arquivos na `collection.media` do Anki.
