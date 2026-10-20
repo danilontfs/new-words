@@ -100,7 +100,15 @@ Quando o usuário responder com as escolhas:
    with open(path, 'w', encoding='utf-8-sig', newline='') as f: f.write(content)
    "
    ```
-3. Mostre um resumo curto (palavra → frase escolhida), sem colar o CSV inteiro.
+3. **Obrigatório, sempre:** depois de gravar a planilha e antes de seguir para a
+   etapa 3 (inclusive antes de perguntar o nome da pasta), devolva ao usuário a
+   lista completa com cada palavra/expressão e a(s) frase(s) escolhida(s), uma
+   linha por linha da planilha, na mesma ordem. Ex:
+   ```
+   - fellow → He's a nice **fellow**.
+   - paperback → I bought the **paperback** version. / She prefers **paperbacks** to e-books.
+   ```
+   Sem colar o CSV inteiro (nada de definições nem tags `<b>`).
 
 ## Etapa 3 — Gerar os áudios
 
